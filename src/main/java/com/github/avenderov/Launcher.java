@@ -19,11 +19,6 @@ import java.util.stream.IntStream;
 @SpringBootApplication
 public class Launcher {
 
-    @Bean
-    Faker faker() {
-        return Faker.instance();
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(Launcher.class, args);
     }
@@ -62,7 +57,9 @@ class UserService {
     private final Collection<User> users;
     private final Map<UUID, Address> addresses;
 
-    public UserService(Faker faker) {
+    public UserService() {
+        final var faker = Faker.instance();
+
         final var address = faker.address();
         final var name = faker.name();
 
