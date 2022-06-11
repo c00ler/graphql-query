@@ -1,17 +1,17 @@
 type Query {
     users: [User]
-    user(id: ID): User
+    user(id: ID!): User
 }
 
 type User {
-    id: ID
-    firstName: String
-    lastName: String
+    id: ID!
+    firstName: String!
+    lastName: String!
     address: Address
 }
 
 type Address {
-    addressLine: String
-    city: String
-    zipCode: String
+    addressLine: String!
+    city: String!
+    zipCode: String!
 }
